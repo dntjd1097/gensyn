@@ -79,7 +79,7 @@ services:
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317
       - INITIAL_PEERS=/ip4/38.101.215.13/tcp/30002/p2p/QmQ2gEXoPJg6iMBSUFWGzAabS2VhnzuS782Y637hGjfsRJ
     ports:
-      - "8080:8000" # Maps port 8080 on the host to 8000 in the container
+      - "18080:8000" # Maps port 8080 on the host to 8000 in the container
     depends_on:
       - otel-collector
       - swarm_node
