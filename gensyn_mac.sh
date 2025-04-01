@@ -51,7 +51,7 @@ services:
     environment:
       - OTEL_LOG_LEVEL=DEBUG
   swarm_node:
-    image: europe-docker.pkg.dev/gensyn-public-b7d9/public/rl-swarm:v0.0.1
+    image: europe-docker.pkg.dev/gensyn-public-b7d9/public/rl-swarm:v0.0.2
     command: ./run_hivemind_docker.sh
     runtime: nvidia # GPU가 없으면 이 줄을 제거하세요
     environment:
