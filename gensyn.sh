@@ -38,10 +38,14 @@ sudo apt-get install curl iptables build-essential git wget lz4 jq make gcc nano
 
 # GensynAI RL Swarm 저장소 클론
 echo "Cloning GensynAI RL Swarm repository..."
-git clone https://github.com/gensyn-ai/rl-swarm.git
-
-# 디렉토리 이동
-cd rl-swarm
+if [ -d "rl-swarm" ]; then
+    echo "rl-swarm directory already exists. Updating repository..."
+    cd rl-swarm
+    git pull
+else
+    git clone https://github.com/gensyn-ai/rl-swarm.git
+    cd rl-swarm
+fi
 
 # docker-compose.yaml 파일 생성
 echo "Creating docker-compose.yaml file..."
