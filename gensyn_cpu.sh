@@ -54,7 +54,7 @@ mv docker-compose.yaml docker-compose.yaml.old 2>/dev/null
 cat <<EOF > docker-compose.yaml
 version: '3'
 services:
-    otel-collector:
+  otel-collector:
     image: otel/opentelemetry-collector-contrib:0.120.0
     ports:
       - "4317:4317"  # OTLP gRPC
@@ -85,7 +85,7 @@ services:
       - OTEL_SERVICE_NAME=rlswarm-fastapi
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317
     ports:
-      - "8080:8000"
+      - "18080:8000"
     depends_on:
       - otel-collector
     healthcheck:

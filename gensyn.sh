@@ -79,7 +79,6 @@ services:
       - "38331:38331" # Exposes the swarm node's P2P port
     depends_on:
       - otel-collector
-  services:
   fastapi:
     build:
       context: .
